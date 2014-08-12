@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\FlappyBird">
+      <UniqueIdentifier>{5f52c460-8bfc-4eb8-939c-6dd01a39f49f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\PinaoPiece">
+      <UniqueIdentifier>{600a8004-25b0-46da-a9de-fc44594fcab2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\AirPlane">
+      <UniqueIdentifier>{b986db58-72c9-49a1-b387-b34503e99c4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\ThiefTD">
+      <UniqueIdentifier>{58538046-32ee-44d3-ac44-9fe54a977318}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FlappyBird\AtlasLoader.cpp">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FlappyBird\BackgroundLayer.cpp">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FlappyBird\BirdSprite.cpp">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FlappyBird\FlappyBridScene.cpp">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FlappyBird\GameLayer.cpp">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FlappyBird\GameScene.cpp">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FlappyBird\LoadingScene.cpp">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FlappyBird\Number.cpp">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FlappyBird\OptionLayer.cpp">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FlappyBird\StatusLayer.cpp">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FlappyBird\UserRecord.cpp">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FlappyBird\WelcomeLayer.cpp">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FlappyBird\WelcomeScene.cpp">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBasic.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameController.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\VisibleRect.cpp">
+      <Filter>Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AirPlane\GameScene_Plane.cpp">
+      <Filter>Classes\AirPlane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AirPlane\GameLayer_Plane.cpp">
+      <Filter>Classes\AirPlane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AirPlane\AirPlaneScene.cpp">
+      <Filter>Classes\AirPlane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AirPlane\PlaneLayer.cpp">
+      <Filter>Classes\AirPlane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AirPlane\BulletLayer.cpp">
+      <Filter>Classes\AirPlane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AirPlane\Enemy.cpp">
+      <Filter>Classes\AirPlane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AirPlane\EnemyLayer.cpp">
+      <Filter>Classes\AirPlane</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ThiefTD\PlayLayer.cpp">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ThiefTD\ThiefTDScene.cpp">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ThiefTD\EnemyBase.cpp">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ThiefTD\Thief.cpp">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ThiefTD\TowerBase.cpp">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ThiefTD\GameManager.cpp">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ThiefTD\ArrowTower.cpp">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ThiefTD\TowerPanelLayer.cpp">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FlappyBird\AtlasLoader.h">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FlappyBird\BackgroundLayer.h">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FlappyBird\BirdSprite.h">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FlappyBird\FlappyBirdScene.h">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FlappyBird\GameLayer.h">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FlappyBird\GameScene.h">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FlappyBird\LoadingScene.h">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FlappyBird\Number.h">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FlappyBird\OptionLayer.h">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FlappyBird\StatusLayer.h">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FlappyBird\UserRecord.h">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FlappyBird\WelcomeLayer.h">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FlappyBird\WelcomeScene.h">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBasic.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameController.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\games.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\VisibleRect.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AirPlane\GameScene_Plane.h">
+      <Filter>Classes\AirPlane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AirPlane\GameLayer_Plane.h">
+      <Filter>Classes\AirPlane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AirPlane\AirPlaneScene.h">
+      <Filter>Classes\AirPlane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AirPlane\PlaneLayer.h">
+      <Filter>Classes\AirPlane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AirPlane\BulletLayer.h">
+      <Filter>Classes\AirPlane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AirPlane\Enemy.h">
+      <Filter>Classes\AirPlane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\define.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppMacros.h">
+      <Filter>Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AirPlane\EnemyLayer.h">
+      <Filter>Classes\AirPlane</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ThiefTD\PlayLayer.h">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ThiefTD\ThiefTDScene.h">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ThiefTD\EnemyBase.h">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ThiefTD\Thief.h">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ThiefTD\TowerBase.h">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ThiefTD\GameManager.h">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ThiefTD\ArrowTower.h">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ThiefTD\TowerPanelLayer.h">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
