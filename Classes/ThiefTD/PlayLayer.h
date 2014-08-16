@@ -35,6 +35,11 @@ private:
     // 初始化Ojb层(Enemy运动轨迹)PointVector
     void initPointsVector(float offX);
 
+    // 初始化工具栏
+    void initToolLayer();
+
+    void menuBackCallback(Ref* pSender);
+
     // 添加炮塔选择面板
     void addTowerChoosePanel(Point position);
 
@@ -60,22 +65,34 @@ private:
     void logic(float dt);
       
 private:
+
+    // 瓦片地图相关
     TMXLayer*           _bgLayer;
     TMXTiledMap*        _map;
     TMXObjectGroup*     _objects;
 
-    TowerPanelLayer*    _chooseTowerPanel;
+    Vector<Node*>       _vPoints;               // 地图上敌人行进的路径点集合
+
+    TowerPanelLayer*    _chooseTowerPanel;      // 防御塔旋转面板
+
+    // 工具条相关
+    Layer*              _toolLayer;
+    Label*              _moneyLabel;
+    ProgressTimer*      _playHpBar;
+    Label*              _groupLabel;
+    Label*              _groupTotalLabel;
 
 
-    Vector<Node*>       _vPoints;
+    TowerBase**         _towerMatrix;           // 用于记录地图上防御塔的位置
 
-    TowerBase**               _towerMatrix;
+    float               _offX;                  // 瓦片地图相对屏幕x轴的偏移
 
-    float               _offX;
+    Point               _towerPos;              // 将要在地图上添加箭塔的位置
 
-    Point               _towerPos;      // 在地图上添加箭塔的位置
+    int                 _money;                 // 玩家当前金钱数
+    int                 _groupCounter;
 
-    int                 _money;
+    CC_SYNTHESIZE(float, _playHpPercentage, PlayHpPercentage);
 };
 
 

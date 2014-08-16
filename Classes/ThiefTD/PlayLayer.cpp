@@ -4,6 +4,7 @@
 #include "GameManager.h"
 #include "SimpleAudioEngine.h"
 #include "platform/CCFileUtils.h"
+#include "HomeScene.h"
 
 
 #define MAP_WIDTH       16
@@ -16,8 +17,14 @@ PlayLayer::PlayLayer()
     , _map(nullptr)
     , _objects(nullptr)
     , _offX(0.0f)
-    , _money(500)
+    , _money(0)
     , _towerMatrix(nullptr)
+    , _toolLayer(nullptr)
+    , _moneyLabel(nullptr)
+    , _playHpBar(nullptr)
+    , _groupTotalLabel(nullptr)
+    , _playHpPercentage(100)
+    , _groupCounter(0)
 {
 
 }
@@ -37,13 +44,13 @@ bool PlayLayer::init()
 
         auto winSize = Director::getInstance()->getWinSize();
 
-        // 加载地图背景
+        // 1.加载地图背景
         auto gameBg = Sprite::create("playbg.png");
         gameBg->setPosition(Point(winSize.width/2, winSize.height/2));
         this->addChild(gameBg, ZORDER_BG);
 
 
-        // 加载瓦片地图
+        // 2.加载瓦片地图
         _map = TMXTiledMap::create("tilemap0.tmx");
 
         _bgLayer = _map->getLayer("bg");
@@ -53,24 +60,24 @@ bool PlayLayer::init()
         _objects = _map->getObjectGroup("obj");
         this->addChild(_map, ZORDER_MAP);
 
-        // 加载Sprite缓存
-        SpriteFrameCache::getInstance()->addSpriteFramesWithFile("Play.plist");
+        // 3.初始化顶部工具条
+        initToolLayer();
 
-        // 计算瓦片地图到屏幕的x轴偏移
+        // 4.计算瓦片地图到屏幕的x轴偏移
         _offX = (_map->getContentSize().width - winSize.width)/2;
         initPointsVector(_offX);
 
        
-        // 添加触摸响应
+        // 5.添加触摸响应
         auto touchListener = EventListenerTouchOneByOne::create();
         touchListener->onTouchBegan = CC_CALLBACK_2(PlayLayer::onTouchBegan, this);
         _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
 
+        // 6.开启定时器
         this->scheduleUpdate();
-
         this->schedule(schedule_selector(PlayLayer::logic), 2.0f);
 
-        // 初始化防御塔位置记录矩阵
+        // 7.初始化防御塔位置记录矩阵
         _towerMatrix = new TowerBase*[MAP_WIDTH * MAP_HEIGHT];
         memset(_towerMatrix, 0, sizeof(TowerBase*)*(MAP_WIDTH*MAP_HEIGHT));
 
@@ -105,6 +112,81 @@ void PlayLayer::initPointsVector(float offX)
     runOfPoint = nullptr;
 }
 
+void PlayLayer::initToolLayer()
+{
+    Size winSize = Director::getInstance()->getWinSize();
+
+    _toolLayer = Layer::create();
+    this->addChild(_toolLayer);
+
+    // 添加工具条背景
+    auto spriteTool = Sprite::createWithSpriteFrameName("toolbg.png");
+    spriteTool->setAnchorPoint(Point(0.5f, 1));
+    spriteTool->setPosition(winSize.width/2, winSize.height);
+    _toolLayer->addChild(spriteTool);
+
+    // 初始化金钱信息
+    _money = GameManager::getInstance()->getMoney();
+    _moneyLabel = Label::createWithBMFont("fonts/bitmapFontChinese.fnt", "");
+    _moneyLabel->setAnchorPoint(Point(0, 0.5f));
+    _moneyLabel->setPosition(spriteTool->getContentSize().width/8, spriteTool->getContentSize().height/2);
+    _moneyLabel->setString(std::to_string(_money));
+    spriteTool->addChild(_moneyLabel);
+
+    // 初始化玩家血条
+    _playHpBar = ProgressTimer::create(Sprite::createWithSpriteFrameName("playhp.png"));
+    _playHpBar->setType(ProgressTimer::Type::BAR);
+    _playHpBar->setMidpoint(Point(0, 0.4f));
+    _playHpBar->setBarChangeRate(Point(1, 0));
+    _playHpBar->setPercentage(_playHpPercentage);
+    _playHpBar->setPosition(spriteTool->getContentSize().width/5*4, spriteTool->getContentSize().height/2);
+    spriteTool->addChild(_playHpBar);
+
+    auto star = Sprite::createWithSpriteFrameName("playstar.png");
+    star->setPosition(spriteTool->getContentSize().width/5*4, spriteTool->getContentSize().height/2);
+    spriteTool->addChild(star);
+
+    // 当前经过波数
+    _groupLabel = Label::createWithBMFont("fonts/bitmapFontChinese.fnt", "");
+    _groupLabel->setPosition(spriteTool->getContentSize().width/8*3, spriteTool->getContentSize().height/2);
+    _groupLabel->setAnchorPoint(Point(0.5f, 0.5f));
+    _groupLabel->setString(std::to_string(_groupCounter + 1));
+    spriteTool->addChild(_groupLabel);
+
+
+    // 总进攻波数
+    int groupTotal = GameManager::getInstance()->getGroupNum();
+    _groupTotalLabel = Label::createWithBMFont("fonts/bitmapFontChinese.fnt", "");
+    _groupTotalLabel->setAnchorPoint(Point(0.5f, 0.5f));
+    _groupTotalLabel->setPosition(spriteTool->getContentSize().width/2, spriteTool->getContentSize().height/2);
+    _groupTotalLabel->setString(std::to_string(groupTotal));
+    spriteTool->addChild(_groupTotalLabel);
+
+
+    // 后退(暂停)键
+    auto backItem1  = Sprite::createWithSpriteFrameName("playbutton1.png");
+    auto backItem2  = Sprite::createWithSpriteFrameName("playbutton2.png");
+    MenuItemSprite* pPauseItem = MenuItemSprite::create(backItem1, backItem2, CC_CALLBACK_1(PlayLayer::menuBackCallback, this));
+    pPauseItem->setPosition(spriteTool->getContentSize().width - backItem1->getContentSize().width/2, spriteTool->getContentSize().height/2);
+    pPauseItem->setAnchorPoint(Point(0, 0.4f));
+    Menu* pMenu = Menu::create(pPauseItem, nullptr);
+    pMenu->setPosition(Point::ZERO);
+    spriteTool->addChild(pMenu);
+
+
+}
+
+void PlayLayer::menuBackCallback(Ref* pSender)
+{
+    // 切换到关卡选择场景
+
+    // 暂时切换到home 
+    auto scene = td::HomeScene::create();
+
+    Director::getInstance()->replaceScene(scene);
+    
+}
+
 bool PlayLayer::onTouchBegan(Touch *touch, Event *unused_event)
 {
     if(_chooseTowerPanel) {
@@ -119,7 +201,7 @@ bool PlayLayer::onTouchBegan(Touch *touch, Event *unused_event)
 
 void PlayLayer::update(float delay)
 {
-    //  添加防御塔
+    // 添加防御塔
     addTower();
 
     collisionDetection();

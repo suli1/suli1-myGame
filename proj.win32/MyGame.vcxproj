@@ -141,11 +141,15 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\AirPlane\GameLayer_Plane.cpp" />
     <ClCompile Include="..\Classes\AirPlane\GameScene_Plane.cpp" />
     <ClCompile Include="..\Classes\AirPlane\PlaneLayer.cpp" />
+    <ClCompile Include="..\Classes\Algorithm\Astar.cpp" />
+    <ClCompile Include="..\Classes\Algorithm\AstarItem.cpp" />
+    <ClCompile Include="..\Classes\Algorithm\MapLayer.cpp" />
+    <ClCompile Include="..\Classes\Algorithm\AlgorithmScene.cpp" />
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\FlappyBird\AtlasLoader.cpp" />
     <ClCompile Include="..\Classes\FlappyBird\BackgroundLayer.cpp" />
     <ClCompile Include="..\Classes\FlappyBird\BirdSprite.cpp" />
-    <ClCompile Include="..\Classes\FlappyBird\FlappyBridScene.cpp" />
+    <ClCompile Include="..\Classes\FlappyBird\FlappyBirdScene.cpp" />
     <ClCompile Include="..\Classes\FlappyBird\GameLayer.cpp" />
     <ClCompile Include="..\Classes\FlappyBird\GameScene.cpp" />
     <ClCompile Include="..\Classes\FlappyBird\LoadingScene.cpp" />
@@ -160,6 +164,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\ThiefTD\ArrowTower.cpp" />
     <ClCompile Include="..\Classes\ThiefTD\EnemyBase.cpp" />
     <ClCompile Include="..\Classes\ThiefTD\GameManager.cpp" />
+    <ClCompile Include="..\Classes\ThiefTD\HomeLayer.cpp" />
+    <ClCompile Include="..\Classes\ThiefTD\HomeScene.cpp" />
+    <ClCompile Include="..\Classes\ThiefTD\LoadingScene_TD.cpp" />
     <ClCompile Include="..\Classes\ThiefTD\PlayLayer.cpp" />
     <ClCompile Include="..\Classes\ThiefTD\Thief.cpp" />
     <ClCompile Include="..\Classes\ThiefTD\ThiefTDScene.cpp" />
@@ -176,6 +183,10 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\AirPlane\GameLayer_Plane.h" />
     <ClInclude Include="..\Classes\AirPlane\GameScene_Plane.h" />
     <ClInclude Include="..\Classes\AirPlane\PlaneLayer.h" />
+    <ClInclude Include="..\Classes\Algorithm\Astar.h" />
+    <ClInclude Include="..\Classes\Algorithm\AstarItem.h" />
+    <ClInclude Include="..\Classes\Algorithm\MapLayer.h" />
+    <ClInclude Include="..\Classes\Algorithm\AlgorithmScene.h" />
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\AppMacros.h" />
     <ClInclude Include="..\Classes\define.h" />
@@ -198,6 +209,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\ThiefTD\ArrowTower.h" />
     <ClInclude Include="..\Classes\ThiefTD\EnemyBase.h" />
     <ClInclude Include="..\Classes\ThiefTD\GameManager.h" />
+    <ClInclude Include="..\Classes\ThiefTD\HomeLayer.h" />
+    <ClInclude Include="..\Classes\ThiefTD\HomeScene.h" />
+    <ClInclude Include="..\Classes\ThiefTD\LoadingScene_TD.h" />
     <ClInclude Include="..\Classes\ThiefTD\PlayLayer.h" />
     <ClInclude Include="..\Classes\ThiefTD\Thief.h" />
     <ClInclude Include="..\Classes\ThiefTD\ThiefTDScene.h" />

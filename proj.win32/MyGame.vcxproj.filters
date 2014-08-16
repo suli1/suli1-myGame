@@ -22,6 +22,9 @@
     <Filter Include="Classes\ThiefTD">
       <UniqueIdentifier>{58538046-32ee-44d3-ac44-9fe54a977318}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Algorithm">
+      <UniqueIdentifier>{ee5d4848-5144-4dde-b00f-11d04b94cd9a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -34,9 +37,6 @@
       <Filter>Classes\FlappyBird</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\FlappyBird\BirdSprite.cpp">
-      <Filter>Classes\FlappyBird</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\FlappyBird\FlappyBridScene.cpp">
       <Filter>Classes\FlappyBird</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\FlappyBird\GameLayer.cpp">
@@ -123,6 +123,30 @@
     <ClCompile Include="..\Classes\ThiefTD\TowerPanelLayer.cpp">
       <Filter>Classes\ThiefTD</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\ThiefTD\HomeLayer.cpp">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ThiefTD\LoadingScene_TD.cpp">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Algorithm\AstarItem.cpp">
+      <Filter>Classes\Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Algorithm\Astar.cpp">
+      <Filter>Classes\Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Algorithm\MapLayer.cpp">
+      <Filter>Classes\Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Algorithm\AlgorithmScene.cpp">
+      <Filter>Classes\Algorithm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\FlappyBird\FlappyBirdScene.cpp">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\ThiefTD\HomeScene.cpp">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -135,9 +159,6 @@
       <Filter>Classes\FlappyBird</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\FlappyBird\BirdSprite.h">
-      <Filter>Classes\FlappyBird</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\FlappyBird\FlappyBirdScene.h">
       <Filter>Classes\FlappyBird</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\FlappyBird\GameLayer.h">
@@ -231,6 +252,30 @@
       <Filter>Classes\ThiefTD</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\ThiefTD\TowerPanelLayer.h">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ThiefTD\HomeLayer.h">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ThiefTD\LoadingScene_TD.h">
+      <Filter>Classes\ThiefTD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Algorithm\Astar.h">
+      <Filter>Classes\Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Algorithm\AstarItem.h">
+      <Filter>Classes\Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Algorithm\MapLayer.h">
+      <Filter>Classes\Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Algorithm\AlgorithmScene.h">
+      <Filter>Classes\Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\FlappyBird\FlappyBirdScene.h">
+      <Filter>Classes\FlappyBird</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\ThiefTD\HomeScene.h">
       <Filter>Classes\ThiefTD</Filter>
     </ClInclude>
   </ItemGroup>

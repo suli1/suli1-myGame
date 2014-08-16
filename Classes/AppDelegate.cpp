@@ -94,23 +94,23 @@ void AppDelegate::applicationWillEnterForeground() {
 
 void AppDelegate::setResourceSearchResolution()
 {
-    std::vector<std::string> paths;
-    paths.push_back("fonts");
+    //std::vector<std::string> paths;
+    //paths.push_back("fonts");
 
-    // FlappyBird
-    paths.push_back("FlappyBird");
-    //paths.push_back("FlappyBird/image");
-    //paths.push_back("FlappyBird/sounds");
+    //// FlappyBird
+    //paths.push_back("FlappyBird");
+    ////paths.push_back("FlappyBird/image");
+    ////paths.push_back("FlappyBird/sounds");
 
-    // AirPlane
-    paths.push_back("AirPlane");
-    //paths.push_back("AirPlane/sounds");
-    //paths.push_back("AirPlane/ui");
+    //// AirPlane
+    //paths.push_back("AirPlane");
+    ////paths.push_back("AirPlane/sounds");
+    ////paths.push_back("AirPlane/ui");
 
-    // Thief TD
-    paths.push_back("ThiefTD");
+    //// Thief TD
+    //paths.push_back("ThiefTD");
 
-    FileUtils::getInstance()->setSearchPaths(paths);
+    //FileUtils::getInstance()->setSearchPaths(paths);
 }
 
 

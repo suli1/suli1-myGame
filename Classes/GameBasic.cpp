@@ -30,8 +30,6 @@ void gameScene_callback(Ref *sender )
     layer->release();
 
     Director::getInstance()->replaceScene(scene);
-
-    //cocostudio::ArmatureDataManager::destroyInstance();
 }
 
 void GameBasicScene::onEnter()

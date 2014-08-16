@@ -12,6 +12,13 @@ GameManager* GameManager::getInstance()
     return s_shareGameManger;
 }
 
+GameManager::GameManager()
+    : _money(500)
+    , _groupNum(10)
+{
+
+}
+
 GameManager::~GameManager()
 {
     clear();

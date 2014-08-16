@@ -5,9 +5,9 @@
 
 class AirPlaneScene : public GameBasicScene {
 public:
-	AirPlaneScene();
+    AirPlaneScene();
 
-	virtual void runThisGame() override;
+    virtual void runThisGame() override;
 
 };
 
